@@ -1,6 +1,7 @@
 export interface ICardProduct {
-    image : undefined ,
-    name : string ,
-    price : number ,
-    quantity : number,
+    name: string,
+    img: string,
+    price: number,
+    quantity: number,
+    updateQuantity: (newQuantity: number) => void; // تعریف نوع برای تابع
 }

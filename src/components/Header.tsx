@@ -11,7 +11,7 @@ const Header : React.FC = () => {
                 <p className="font-bold text-4xl">Starbucks</p>
             </div>
             <div className="text-center mt-4 font-bold text-[#2A3430]">
-                <p>Starbucks Online Coffee Order</p>
+                <p className="text-lg">Starbucks Online Coffee Order</p>
             </div>
             </div>
         </header>
