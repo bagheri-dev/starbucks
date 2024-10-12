@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import CardProduct from "./components/CardProduct";
 import { CardProductBill } from "./components/CardProductBill";
 import Header from "./components/Header";
@@ -12,7 +14,7 @@ function App() {
       {}
     )
   );
-  const updateQuantity = (name : string, newQuantity : number) => {
+  const updateQuantity = (name: string, newQuantity: number) => {
     setQuantities((prevQuantities) => ({
       ...prevQuantities,
       [name]: newQuantity,
@@ -21,7 +23,7 @@ function App() {
   const totalAmount = data.reduce((total, product) => {
     return total + product.price * quantities[product.name];
   }, 0);
-
+  const notify = () => toast("Your order is successful✅");
   return (
     <>
       <Header />
@@ -58,7 +60,17 @@ function App() {
         })}
       </div>
       <div className="py-5 text-3xl font-bold text-center">
-        <h2>Total : ${totalAmount.toFixed(2)}</h2>
+        <h2>Total : ${totalAmount}</h2>
+      </div>
+      <div className="bg-[#EAC9A0] py-4 text-white text-2xl text-center container mx-auto rounded-xl font-bold">
+        <button
+          className="w-full h-full"
+          disabled={totalAmount === 0}
+          onClick={notify}
+        >
+          Submit Order
+        </button>
+        <ToastContainer />
       </div>
     </>
   );
