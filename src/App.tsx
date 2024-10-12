@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import CardProduct from "./components/CardProduct";
 import { CardProductBill } from "./components/CardProductBill";
 import Header from "./components/Header";
@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       <Header />
-      <div className="grid grid-cols-5 gap-3 container mx-auto">
+      <div className="grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 grid-cols-1 px-2 sm:grid-cols-2 gap-3 container mx-auto">
         {data.map((product) => {
           return (
             <CardProduct
@@ -46,7 +46,7 @@ function App() {
       <div className="py-5 text-xl text-center font-bold">
         <h2>Bill</h2>
       </div>
-      <div className="grid grid-cols-5 gap-3 container mx-auto">
+      <div className="grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 grid-cols-1 px-2 sm:grid-cols-2 gap-3 container mx-auto">
         {data.map((product) => {
           return (
             <CardProductBill
